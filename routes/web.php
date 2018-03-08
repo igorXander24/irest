@@ -17,5 +17,5 @@ Route::get('/', function () {
 
 
 Route::get('/', function () {
-    return view('home');
+    return view('autentication/home');
 });
