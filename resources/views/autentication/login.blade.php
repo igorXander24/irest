@@ -79,7 +79,7 @@
 
     <div class="content">
         <div class="title m-b-md">
-            autenticacion
+            autenticacion2 dhgh
         </div>
 
         <div class="links">
@@ -88,6 +88,8 @@
             <a href="https://laravel-news.com">News</a>
             <a href="https://forge.laravel.com">Forge</a>
             <a href="https://github.com/laravel/laravel">GitHub</a>
+            <img src="{{ asset('img/autentication/1.jpg') }}" alt="imagen">
+            <a href="#">A ningun lado</a>
         </div>
     </div>
 </div>
