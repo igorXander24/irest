@@ -13,12 +13,12 @@
     <div class="content">
         <login>
             <h1>Inicio de Sessión</h1>
-            <form id="frm_login_autentication" action="/" method="post" token="'.$token.'">
-                <input name="txtuser" pattern="[a-zA-Z.-_]{1,12}" id="txtuser" type="text" class="form-control" placeholder="Usuario" maxlength="12" required>
-                <input name="txtpass" id="txtpass" type="password" class="form-control" placeholder="Contraseña" maxlength="24" required>
+            <form id="frm_login_autentication" action="/" method="post">
+                <input name="txtuser" pattern="[a-zA-Z0-9_-]{6,12}" id="txtuser" type="text" class="form-control" placeholder="Usuario" maxlength="12" required>
+                <input name="txtpass" id="txtpass" type="password" pattern="[*]{6,24}" class="form-control" placeholder="Contraseña" maxlength="24" required>
                 <buttons>
                     <button class="btn btn-success">Acceder</button>
-                    <button type="button" class="btn btn-orange rigth">?</button>
+                    <button type="button" class="btn btn-orange">?</button>
                 </buttons>
             </form>
         </login>
@@ -46,6 +46,36 @@
                 });
             });
         }(jQuery));
+    </script>
+    <script>
+        let user = document.getElementById('txtuser');
+        let pass = document.getElementById('txtpass');
+
+        user.addEventListener('invalid', function (e) {
+            if(this.validity.valueMissing) {
+                e.target.setCustomValidity('Por favor ingresa un nombre de usuario');
+            } else if(!this.validity.valid) {
+                e.target.setCustomValidity('Este no es un nombre de usuario válido');
+            }
+            /**This event to dispach when contain value input change*/
+            this.addEventListener('input', function() {
+                e.target.setCustomValidity('');
+            });
+        });
+
+        pass.addEventListener('invalid', function (e) {
+            if(this.validity.valueMissing) {
+                e.target.setCustomValidity('Eh que no se te olvide la contraseña');
+            } else if(!this.validity.valid) {
+                e.target.setCustomValidity('La contraseña debe de contener entre 6 y 24 caracteres!');
+            }
+            /**This event to dispach when contain value input change*/
+            this.addEventListener('input', function() {
+                e.target.setCustomValidity('');
+            });
+        });
+
+
     </script>
 </body>
 </html>

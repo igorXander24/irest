@@ -19,3 +19,7 @@ Route::get('/', function () {
 Route::get('/', function () {
     return view('autentication/login');
 });
+
+Route::get('/control_panel', function() {
+    return view('main');
+});

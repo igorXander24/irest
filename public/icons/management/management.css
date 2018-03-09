@@ -1,0 +1,76 @@
+.calculating {
+    background: url("img/calculating.svg") no-repeat center center;
+}
+
+.phone-number {
+    background: url("img/phone-number.svg") no-repeat center center;
+}
+
+.id-card {
+    background: url("img/id-card.svg") no-repeat center center;
+}
+
+.online-store {
+    background: url("img/online-store.svg") no-repeat center center;
+}
+
+.bars-chart {
+    background: url("img/bars-chart.svg") no-repeat center center;
+}
+
+.office-material {
+    background: url("img/office-material.svg") no-repeat center center;
+}
+
+.customer-service {
+    background: url("img/customer-service.svg") no-repeat center center;
+}
+
+.ringing {
+    background: url("img/ringing.svg") no-repeat center center;
+}
+
+.wall-calendar {
+    background: url("img/wall-calendar.svg") no-repeat center center;
+}
+
+.agreement {
+    background: url("img/agreement.svg") no-repeat center center;
+}
+
+
+.x16 {
+    width: 16px;
+    height: 16px;
+}
+
+.x24 {
+    width: 24px;
+    height: 24px;
+}
+
+.x32 {
+    width: 32px;
+    height: 32px;
+}
+
+.x64 {
+    width: 64px;
+    height: 64px;
+}
+
+.x128 {
+    width: 128px;
+    height: 128px;
+}
+
+.x256 {
+    width: 256px;
+    height: 256px;
+}
+
+.x512 {
+    width: 512px;
+    height: 512px;
+}
+
