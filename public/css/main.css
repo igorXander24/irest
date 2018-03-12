@@ -1,0 +1,137 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: stretch;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    color: #717171;
+}
+
+header, section {
+    display: flex;
+    padding: 0 20px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+}
+
+header {
+    /*justify-content: space-between; <- Ya no es necesario*/
+    flex-basis: 50px;
+    min-height: 50px;
+    background-color: #F1F1F1;
+}
+
+logo {
+    flex-basis: 190px;
+}
+
+options {
+    flex-grow: 0.6; /**<- factor de crecimiento en eje principal*/
+}
+
+settings {
+    flex-grow: 0.4; /**<- factor de crecimiento en eje principal*/
+}
+
+section {
+    background-color: #222222;
+    flex-basis: 40px;
+    min-height: 40px;
+}
+
+/**<- Aqui estarán las interfaces*/
+container {
+    /*background-color: #e7c8ff;*/
+    flex-grow: 1;
+}
+
+logo, options, settings, module, user, section, photo {
+    display: flex;
+}
+
+logo, photo {
+    justify-content: center;
+    align-items: center;
+}
+
+options, section {
+    justify-content: flex-start;
+    /*align-items: stretch;*/
+}
+
+module {
+    align-items: center;
+    padding: 0 8px;
+}
+
+settings {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+settings > *{
+    padding: 0 6px;
+}
+
+header > options > module:hover,
+section > option-item:hover {
+    background-color: yellowgreen;
+}
+
+.active-module, .active-option-active {
+    background-color: yellowgreen;
+}
+
+date, time, name, option-item {
+    font-family: "Quicksand", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+date, name {
+    font-size: 14px;
+}
+
+time {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+user {
+    align-items: center;
+
+}
+
+user > * {
+    padding: 0 4px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+}
+
+user > photo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+user > photo > img {
+    border-radius: 50%;
+}
+
+option-item {
+    display: flex;
+    align-items: center;
+    color: beige;
+    font-weight: bold;
+    padding: 0 20px 0 10px;
+}

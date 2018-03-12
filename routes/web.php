@@ -20,6 +20,11 @@ Route::get('/', function () {
     return view('autentication/login');
 });
 
+/*
+Lo de aqui es equivalente
 Route::get('/control_panel', function() {
     return view('main');
 });
+a lo siguiente
+*/
+Route::view('/control_panel', 'main');
