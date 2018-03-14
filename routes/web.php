@@ -28,3 +28,5 @@ Route::get('/control_panel', function() {
 a lo siguiente
 */
 Route::view('/control_panel', 'main');
+
+Route::view('/testing', 'testing');
