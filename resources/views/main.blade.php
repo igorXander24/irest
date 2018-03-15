@@ -76,8 +76,8 @@
     <container>
 
     </container>
-    <script src=" {{ asset('js/main.js') }} " type="module"></script>
-    <!--<script src=" {{ asset('libraries/luxon/js/luxon.js') }} " type="module"></script>-->
+    <script src=" {{ asset('js/main.js') }} "></script>
+
     <script>
        /* import {Irest} from '';
 

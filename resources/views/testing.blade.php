@@ -11,7 +11,6 @@
     <div id="irest">
         <example-component></example-component>
     </div>
-    <script src="{{ asset('js/app.js') }}"></script>
-
+    <!--<script src="{{ asset('js/app.js') }}"></script>-->
 </body>
 </html>
