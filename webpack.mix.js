@@ -24,4 +24,4 @@ mix.webpackConfig({
             }
         ]
     }
-})
+});

@@ -80,31 +80,64 @@ module.exports = __webpack_require__(45);
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Irest", function() { return Irest; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__libraries_luxon_js_luxon__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_worker_loader_workers_worker_time__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_worker_loader_workers_worker_time___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_worker_loader_workers_worker_time__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 
 
+
 var Irest = function () {
-    function Irest() {
+    function Irest(timezone) {
         _classCallCheck(this, Irest);
 
-        this.task_clock = null;
+        this._timezone = timezone;
+        this._task_clock = null;
+
+        //init clock
+        this.time();
     }
 
     _createClass(Irest, [{
-        key: 'time',
+        key: "time",
         value: function time() {
             try {
-                this.task_clock = new Worker('./js/workers/worker_time.js');
-                this.task_clock.addEventListener('message', function (e) {
-                    console.log(e.data);
+                var tz = this.timezone;
+
+                this._task_clock = new __WEBPACK_IMPORTED_MODULE_1_worker_loader_workers_worker_time___default.a();
+
+                this._task_clock.addEventListener('message', function (e) {
+                    var dt = __WEBPACK_IMPORTED_MODULE_0__libraries_luxon_js_luxon__["a" /* DateTime */].local().setZone(tz); //#<- Es una instancia
+                    //let d  = new DateTime();
+
+                    console.log('Estático');
+                    //console.log(DateTime);
+
+                    console.log('Objeto de datatime');
+                    //console.log(d);
+
+                    var o = {
+                        ye: dt.c.year,
+                        mt: dt.c.month,
+                        da: dt.c.day,
+                        ds: '',
+                        ho: dt.c.hour,
+                        mi: dt.c.minute,
+                        ss: dt.c.second
+                    };
+                    console.log(o);
                 });
-                this.task_clock.postMessage({});
+                this._task_clock.postMessage({});
             } catch (e) {
                 console.log(e); /**<- Experimentando*/
             }
+        }
+    }, {
+        key: "timezone",
+        get: function get() {
+            return this._timezone;
         }
     }]);
 
@@ -114,7 +147,6 @@ var Irest = function () {
 
 
 var i = new Irest();
-i.time();
 
 console.log(__WEBPACK_IMPORTED_MODULE_0__libraries_luxon_js_luxon__["a" /* DateTime */].local());
 
@@ -7336,6 +7368,15 @@ var DateTime = function () {
 
 
 //# sourceMappingURL=luxon.js.map
+
+/***/ }),
+
+/***/ 47:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = function() {
+  return new Worker(__webpack_require__.p + "4b4287337e145d4e5aef.worker.js");
+};
 
 /***/ })
 
